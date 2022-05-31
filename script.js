@@ -1,3 +1,4 @@
+// my questions for the quiz //
 const quizData = [
     {
       question: "Which country is luis Diaz from?",
@@ -43,7 +44,7 @@ const quizData = [
 
 function loadQuiz() {
 
-    
+    // setting the seconds on the timer//
     if(currentQuiz === 0){
     timerId = setInterval(clockStart, 1000);
     }
@@ -73,7 +74,7 @@ function clockStart() {
 function deselectAnswers() {
   answerEls.forEach(answerEl => answerEl.checked = false)
 }
-
+// trying to reduce the time of the timer when answering a question wrong//
 function getSelected() {
   let answer
   answerEls.forEach(answerEl => {
@@ -81,16 +82,16 @@ function getSelected() {
       answer = answerEl.id 
     }
 
-    if(time < 15){
-        time - 15
+    if(time < 5){
+        time - 10
     } else {
-        time = 20
+        time = 25
     }
 
 })
 return answer
 }
-
+// making sure the answers are correct //
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
     if(answer) {
