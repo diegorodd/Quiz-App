@@ -43,7 +43,10 @@ const quizData = [
 
 function loadQuiz() {
 
+    
+    if(currentQuiz === 0){
     timerId = setInterval(clockStart, 1000);
+    }
     clock.textContent = time;
 
   deselectAnswers()
