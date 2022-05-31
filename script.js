@@ -49,6 +49,8 @@ function loadQuiz() {
     }
     clock.textContent = time;
 
+
+
   deselectAnswers()
 
   const currentQuizData = quizData[currentQuiz]
@@ -65,6 +67,7 @@ function clockStart() {
     if (time <= 0) {
         clearInterval(timerId)
     }
+    
 }
 
 function deselectAnswers() {
@@ -77,6 +80,13 @@ function getSelected() {
     if(answerEl.checked) {
       answer = answerEl.id 
     }
+
+    if(time < 15){
+        time - 15
+    } else {
+        time = 20
+    }
+
 })
 return answer
 }
