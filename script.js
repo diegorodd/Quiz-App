@@ -73,8 +73,13 @@ function clockStart() {
 
 function deselectAnswers() {
   answerEls.forEach(answerEl => answerEl.checked = false)
+  if (time < 15) {
+    time - 15
+    } else {
+    time = 0
+    }
 }
-// trying to reduce the time of the timer when answering a question wrong//
+// trying to reduce the time of the timer when answering a question/
 function getSelected() {
   let answer
   answerEls.forEach(answerEl => {
@@ -82,11 +87,11 @@ function getSelected() {
       answer = answerEl.id 
     }
 
-    if(time < 5){
-        time - 10
-    } else {
-        time = 25
-    }
+    // if(time < 15){
+    //     time - 15
+    // } else {
+    //     time = 0
+    // }
 
 })
 return answer
