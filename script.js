@@ -68,16 +68,12 @@ function clockStart() {
     if (time <= 0) {
         clearInterval(timerId)
     }
+
     
 }
 
 function deselectAnswers() {
   answerEls.forEach(answerEl => answerEl.checked = false)
-  if (time < 15) {
-    time - 15
-    } else {
-    time = 0
-    }
 }
 // trying to reduce the time of the timer when answering a question/
 function getSelected() {
@@ -88,7 +84,7 @@ function getSelected() {
     }
 
     // if(time < 15){
-    //     time - 15
+    //     time - 5
     // } else {
     //     time = 0
     // }
@@ -103,6 +99,9 @@ submitBtn.addEventListener('click', () => {
       if(answer === quizData[currentQuiz].correct) {
           console.log(answer)
         score++
+      } 
+      else{
+          time -= 15 
       }
       currentQuiz++
 
